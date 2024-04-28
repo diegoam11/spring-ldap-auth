@@ -1,0 +1,51 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Home</title>
+    <style>
+        div {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+        }
+        table {
+            border-collapse: collapse;
+            width: 50%;
+        }
+
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <h1>User List</h1>
+    <!-- Inline styles-->
+    <!-- <table style="border-collapse: collapse; width: 100%; border: 1px solid black"> -->
+    <table>
+        <tr>
+            <th>uid (username)</th>
+            <th>cn</th>
+            <th>sn</th>
+            <th>password</th>
+        </tr>
+        <tbody>
+        <tr th:each="user: ${ldapUsers}">
+            <td th:text="${user.username}"></td>
+            <td th:text="${user.cn}"></td>
+            <td th:text="${user.sn}"></td>
+            <td th:text="${user.password}"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Add user form</title>
+</head>
+<body>
+<h1>Add User Form</h1>
+<form th:action="@{/addUser}" th:object="${ldapUser}" method="post">
+    <label>username: <input type="text" th:field="*{username}"></label><br>
+    <label>cn: <input type="text" th:field="*{cn}"></label><br>
+    <label>sn: <input type="text" th:field="*{sn}"></label><br>
+    <label>password: <input type="password" th:field="*{password}"></label><br>
+    <button type="submit">Add User</button>
+</form>
+</body>
+</html>
